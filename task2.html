@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+<head>
+	<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Task 2</title>
+</head>
+<body>
+	<div class="container">
+        <!-- Menu container loaded by jQuery -->
+        <div id="menu-container"></div> 
+		<h1>Report Generator</h1>      
+
+        <div id="reportContainer">
+            <button id="generateReport">Generate Report</button>
+            <h2>Report:</h2>
+            <pre id="reportContent"></pre>
+        </div>
+        
+        <div style="clear:both;"></div>	
+	
+	</div>  
+   
+    <script>        
+        function testResults (form) {
+            var fullText = form.fulltext.value;
+            var keywords = form.keywords.value;
+            alert ("You typed: " + fullText + keywords);
+        }
+     
+        // Function to generate the report
+        function generateReport() {
+            // Dummy report data
+            const reportData = [
+                { name: "John Doe", course: "Javascript Course " },
+                { name: "Jane Smith", course: "MySQL Course" },
+                { name: "Bob Johnson", course: "React JS Course" },
+                { name: "John Doe", course: "Vue Course" },
+                { name: "Ben White", course: "Network Administrator Course" },
+                { name: "Ann Prike", course: "React JS Course" },
+                { name: "Jim Black", course: "Vue Course" },
+                { name: "Joe Cowel", course: "C++ Course" },
+                { name: "Adam Knight", course: "Java Course" }
+            ];
+
+            // Create the report content
+            let reportContent = "Name\t        Course\n";
+            reportData.forEach(data => {
+                reportContent += `${data.name}\t${data.course}\n`;
+            });
+
+            return reportContent;
+        }
+
+        // Function to display the report
+        function displayReport() {
+            const reportContainer = document.getElementById("reportContainer");
+            const reportContent = document.getElementById("reportContent");
+            const generatedReport = generateReport();
+
+            reportContent.textContent = generatedReport;
+            reportContainer.style.display = "block";
+        }
+
+        // Add an event listener to the button
+        const generateButton = document.getElementById("generateReport");
+        generateButton.addEventListener("click", displayReport);
+
+        $(document).ready(function () {
+            // Load the menu from an external file
+            $("#menu-container").load("menu.html");
+        });
+    </script>
+</body>
+</html>
