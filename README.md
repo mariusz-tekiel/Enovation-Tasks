@@ -11,6 +11,6 @@ Enovation Test Tasks
 
 3. Then I created a task2.html file and resolved the Task 2 using Javascript
 
-4. Project Repository is under link https://bitbucket.org/mtekiel/detect_collisions/src/dev/
+4. Project Repository is under link https://github.com/mariusz-tekiel/Enovation-Tasks
 
 Server Environment: Please, ensure that you are serving these files from a web server. You can use a local development server or upload the files to a hosting service.
