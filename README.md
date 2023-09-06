@@ -11,6 +11,11 @@ Enovation Test Tasks
 
 3. Then I created a task2.html file and resolved the Task 2 using Javascript
 
-4. Project Repository is under link https://github.com/mariusz-tekiel/Enovation-Tasks/tree/dev
+4. The next step was to create the js/script.js file, which serves admin_login.html and allows us to view the Task 2 report only with administrator-level access. For simplicity, the login and password are hard-coded.
+
+LOGIN: admin
+PASSWORD: password
+
+5. Project Repository is under link https://github.com/mariusz-tekiel/Enovation-Tasks/tree/dev
 
 Server Environment: Please, ensure that you are serving these files from a web server. You can use a local development server or upload the files to a hosting service.
